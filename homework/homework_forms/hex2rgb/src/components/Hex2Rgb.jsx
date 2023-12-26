@@ -57,7 +57,7 @@ function Hex2Rgb() {
 
     const props = {};
     if (state.isWarning) {
-      props.className = 'warning';
+      props.className = "warning";
     } else {
       props.style = {
         backgroundColor: state.color
@@ -66,11 +66,12 @@ function Hex2Rgb() {
 
     return(
         <figure {...props}>
-             <input
+            <input
                 onChange={change}
                 type="text"
                 className="hex-field js-hex-field"
-                placeholder={state.color} />
+                placeholder={state.color}
+            />
             <div className="message js-message">{state.result}</div>
         </figure>
     );

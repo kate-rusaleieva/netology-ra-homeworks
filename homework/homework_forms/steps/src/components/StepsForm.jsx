@@ -10,7 +10,7 @@ function StepsForm() {
     const [stepsList, setList] = useState([]);
 
     function onClickDeleteItem(e) {
-        const deleteItem = e.target.getAttribute( 'data-key' );
+        const deleteItem = e.target.getAttribute( "data-key" );
         let newData = [];
 
         stepsList.map((item, i) => {
@@ -42,14 +42,16 @@ function StepsForm() {
                         <input
                             id="date" 
                             name="date"
-                            onChange={handleInputChange} />
+                            onChange={handleInputChange} 
+                        />
                     </div>
                     <div className="field-wrapper">
                         <label htmlFor="km">Пройдено км</label>
                         <input
                             id="km" 
                             name="km"
-                            onChange={handleInputChange} />
+                            onChange={handleInputChange}
+                        />
                     </div>
                     <div className="field-wrapper">
                         <button type="submit">OK</button>
@@ -58,7 +60,8 @@ function StepsForm() {
             </div>
             <StepsList 
                 items={stepsList} 
-                onClickDeleteItem={(e) => onClickDeleteItem(e)} />
+                onClickDeleteItem={(e) => onClickDeleteItem(e)} 
+            />
         </div>
     );
 

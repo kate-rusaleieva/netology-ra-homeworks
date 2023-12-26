@@ -10,7 +10,7 @@ const defaultProps = {
     onClickDeleteItem: () => { console.log( "default" ); }
 };
 
-function StepsList( props ) {
+function StepsList(props) {
     function generateNewList(items) {
         let newList = [],
             newData = [];
@@ -18,14 +18,14 @@ function StepsList( props ) {
         items.map((item, i) => {
             let itemKm = parseFloat(item.km);
     
-            if (typeof newData[ item.date ] !== "undefined") {
-                itemKm += parseFloat(newData[ item.date ]);
+            if (typeof newData[item.date] !== "undefined") {
+                itemKm += parseFloat(newData[item.date]);
             }
-            newData[ item.date ] = itemKm;
+            newData[item.date] = itemKm;
         });
     
         Object.keys(newData).sort(function(a, b) {
-            return new Date( b ) - new Date( a );
+            return new Date(b) - new Date(a);
         }).forEach(function(date) {
             newList.push( { date: date, km: newData[date] } );
         })
@@ -33,22 +33,28 @@ function StepsList( props ) {
         return newList;
     }
 
-    function renderItems(items, onClickDeleteItem ) {
+    function renderItems(items, onClickDeleteItem) {
         return items.map((item, i) => {
             return (
                 <tr key={item.date}>
                     <td>{item.date}</td>
                     <td>{item.km}</td>
                     <td>
-                        <button type="button" data-key={item.date} onClick={onClickDeleteItem}>Удалить</button>
+                        <button 
+                            type="button" 
+                            data-key={item.date}
+                            onClick={onClickDeleteItem}
+                         >
+                            Удалить
+                        </button>
                     </td>
                 </tr>
             );
         });
     }
 
-    const { items, onClickDeleteItem } = props;
-    const newList = generateNewList( items );
+    const {items, onClickDeleteItem} = props;
+    const newList = generateNewList(items);
 
     return(
         <div className="table-wrapper">
