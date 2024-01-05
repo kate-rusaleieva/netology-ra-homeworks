@@ -1,0 +1,44 @@
+#root {
+  width: 100%;
+}
+
+.wrapper {
+  margin: auto;
+  width: 600px;
+}
+
+.form {
+  display: flex;
+  gap: 10px;
+  align-items: end;
+  justify-content: center;
+  padding: 20px;
+  border: 1px dashed black;
+}
+
+.field-wrapper label {
+  display: block;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.field-wrapper input {
+  padding: 10px;
+}
+
+.table-wrapper {
+  margin-top: 20px;
+}
+
+.table-wrapper table {
+  width: 100%;
+  padding: 20px;
+  border-collapse: collapse;
+  text-align: center;
+  border: 1px dashed black;
+}
+
+.table-wrapper table td {
+  padding: 20px;
+  border: 1px dashed black;
+}
