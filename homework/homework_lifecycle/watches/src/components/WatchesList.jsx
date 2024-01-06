@@ -12,7 +12,7 @@ const defaultProps = {
     onClickDeleteItem: () => { console.log( "default" ); }
 };
 
-class Watches extends Component {
+class WatchesList extends Component {
     constructor(props) {
         super(props);
 
