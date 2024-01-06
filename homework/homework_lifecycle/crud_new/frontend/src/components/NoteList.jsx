@@ -1,7 +1,20 @@
 import React, { Component } from 'react'
 import NoteItem from './NoteItem'
+import PropTypes from 'prop-types';
 
-export default class NoteList extends Component {
+const propTypes = {
+    items: PropTypes.array.isRequired,
+    onClickDeleteItem: PropTypes.func.isRequired,
+    onClickUpdate: PropTypes.func.isRequired
+};
+
+const defaultProps = {
+    items: [],
+    onClickDeleteItem: () => { console.log( "default" ); },
+    onClickUpdate: () => { console.log( "default" ); }
+};
+
+class NoteList extends Component {
     constructor(props) {
         super(props);
 
@@ -50,3 +63,8 @@ export default class NoteList extends Component {
      }
 
 }
+
+NoteList.defaultProps = defaultProps;
+NoteList.propTypes = propTypes;
+
+export default NoteList

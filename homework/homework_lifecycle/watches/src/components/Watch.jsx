@@ -1,7 +1,20 @@
 import React, { Component, useState, useEffect } from 'react'
 import moment from 'moment-timezone'
+import PropTypes from 'prop-types';
 
-export default class Watch extends Component {
+const propTypes = {
+    item: PropTypes.object.isRequired,
+    index: PropTypes.string.isRequired,
+    onClickDeleteItem: PropTypes.func.isRequired
+};
+
+const defaultProps = {
+    item: {},
+    index: "",
+    onClickDeleteItem: () => { console.log( "default" ); }
+};
+
+class Watch extends Component {
     constructor(props) {
         super(props);
 
@@ -55,3 +68,8 @@ export default class Watch extends Component {
      }
      
 }
+
+Watch.defaultProps = defaultProps;
+Watch.propTypes = propTypes;
+
+export default Watch

@@ -1,7 +1,18 @@
 import React, { Component } from 'react'
 import Watch from './Watch'
+import PropTypes from 'prop-types';
 
-export default class Watches extends Component {
+const propTypes = {
+    items: PropTypes.object.isRequired,
+    onClickDeleteItem: PropTypes.func.isRequired
+};
+
+const defaultProps = {
+    items: [],
+    onClickDeleteItem: () => { console.log( "default" ); }
+};
+
+class Watches extends Component {
     constructor(props) {
         super(props);
 
@@ -46,3 +57,8 @@ export default class Watches extends Component {
      }
 
 }
+
+WatchesList.defaultProps = defaultProps;
+WatchesList.propTypes = propTypes;
+
+export default WatchesList

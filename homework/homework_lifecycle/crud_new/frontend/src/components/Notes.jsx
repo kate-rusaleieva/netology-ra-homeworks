@@ -1,8 +1,19 @@
 import React, { Component } from 'react'
 import NewNote from './NewNote'
 import NoteList from './NoteList';
+import PropTypes from 'prop-types';
 
-export default class Notes extends Component {
+const propTypes = {
+    notes: PropTypes.array,
+    isLoading: PropTypes.bool.isRequired
+};
+
+const defaultProps = {
+    notes: [],
+    isLoading: true
+};
+
+ class Notes extends Component {
     constructor(props) {
         super(props);
 
@@ -80,3 +91,8 @@ export default class Notes extends Component {
     }
 
 }
+
+Notes.defaultProps = defaultProps;
+Notes.propTypes = propTypes;
+
+export default Notes

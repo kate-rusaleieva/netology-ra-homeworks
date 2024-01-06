@@ -1,6 +1,17 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types';
 
-export default class NewNote extends Component {
+const propTypes = {
+    note: PropTypes.string,
+    addNote: PropTypes.func.isRequired,
+};
+
+const defaultProps = {
+    note: "",
+    addNote: () => { console.log( "default" ); },
+};
+
+class NewNote extends Component {
     constructor(props) {
         super(props);
 
@@ -44,3 +55,8 @@ export default class NewNote extends Component {
     }
 
 }
+
+NewNote.defaultProps = defaultProps;
+NewNote.propTypes = propTypes;
+
+export default NewNote

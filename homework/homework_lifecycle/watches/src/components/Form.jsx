@@ -1,6 +1,17 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types';
 
-export default class Form extends Component {
+const propTypes = {
+    handleInputChange: PropTypes.func.isRequired,
+    onSubmit: PropTypes.func.isRequired,
+};
+
+const defaultProps = {
+    handleInputChange: () => { console.log( "default" ); },
+    onSubmit: () => { console.log( "default" ); }
+};
+
+class Form extends Component {
     constructor(props) {
         super(props);
         this.handleInputChange = props.handleInputChange;
@@ -35,3 +46,8 @@ export default class Form extends Component {
         );
     }
 }
+
+Form.defaultProps = defaultProps;
+Form.propTypes = propTypes;
+
+export default Form
