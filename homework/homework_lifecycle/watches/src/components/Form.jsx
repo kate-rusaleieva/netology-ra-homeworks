@@ -28,6 +28,7 @@ class Form extends Component {
                             id="name" 
                             name="name"
                             onChange={this.handleInputChange} 
+                            autoComplete="off"
                         />
                     </div>
                     <div className="field-wrapper">
@@ -36,6 +37,7 @@ class Form extends Component {
                             id="timezone" 
                             name="timezone"
                             onChange={this.handleInputChange}
+                            autoComplete="off"
                         />
                     </div>
                     <div className="field-wrapper">

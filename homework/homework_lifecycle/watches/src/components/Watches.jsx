@@ -33,7 +33,25 @@ export default class Watches extends Component {
 
     onSubmit = event => {
         event.preventDefault();
+
+        if(this.form.name === "") {
+            alert( "Введите название" );
+            return false;
+        }
+
+        if(this.form.timezone === "") {
+            alert( "Введите временную зону" );
+            return false;
+        }
+
         this.state.watchList.push( this.form );
+
+        this.form = {
+            name: "",
+            timezone: "",
+        };
+        event.target.reset();
+
         this.setState({ watchList: this.state.watchList });
     }
 

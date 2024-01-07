@@ -3,7 +3,7 @@ import Watch from './Watch'
 import PropTypes from 'prop-types';
 
 const propTypes = {
-    items: PropTypes.object.isRequired,
+    items: PropTypes.array.isRequired,
     onClickDeleteItem: PropTypes.func.isRequired
 };
 

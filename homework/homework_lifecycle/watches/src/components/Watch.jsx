@@ -4,13 +4,13 @@ import PropTypes from 'prop-types';
 
 const propTypes = {
     item: PropTypes.object.isRequired,
-    index: PropTypes.string.isRequired,
+    index: PropTypes.number.isRequired,
     onClickDeleteItem: PropTypes.func.isRequired
 };
 
 const defaultProps = {
     item: {},
-    index: "",
+    index: 0,
     onClickDeleteItem: () => { console.log( "default" ); }
 };
 
